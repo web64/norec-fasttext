@@ -6,6 +6,12 @@ The dataset contains annotated reviews in Norwegian ranging from 1 to 6 stars.
 
 The trained model will predict a rating of 1 to 6 starts of any given text.
 
+## Setup
+```bash
+git clone https://github.com/web64/norec-fasttext.git
+cd norec-fasttext
+```
+
 ## Prepare training data
 Download and extract the NoReC dataset
 ```bash
