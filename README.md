@@ -32,6 +32,13 @@ This will create the fastText training files:
 * norec_dev.txt
 * norec_train.txt
 
+The training text files are in this format:
+```
+__label__6  et episk eventyr et episk eventyr arkitektens læregutt er en storslagen roman ...
+__label__1 tåpelig og flau kosebamse-reprise tåpelig og flau kosebamse-reprise komedien...
+__label__5 test av mercedes c-klasse c350te...
+```
+The training texts has been lowercased and cleaned to reduce the number of tokens.
 
 ## Train FastText Model
 Make sure you have fastText installed. 
@@ -51,7 +58,7 @@ See FastText documentation on how to train and optimize models: https://fasttext
 # Test model
 fasttext test model_norec.bin norec_test.txt
 ```
-Precision (P@1) is around 0.561
+Precision (P@1) is around 0.561 (this value might change each time the model is trained)
 
 Recall (R@1) can be ignored as this only applies when trainingtexts 
 ```
@@ -65,9 +72,11 @@ R@1     0.561
 Run this command to try the interactive predictor.
 
 Enter some text and it will return a predicted rating between 1 and 6.
-```bash
+```
 # Predictions
-fastText/fasttext predict model_norec.bin -
+ >> fastText/fasttext predict model_norec.bin -
+ >> sjelden har så mange gode skuespillere gitt så mye for et så bedritent manus og en så flau film
+ >> __label__3
 ```
 
 ## See Also
