@@ -1,4 +1,4 @@
-# NoREC - FastText Model
+# NoReC - FastText Model
 
 This page shows step-by-step instructions on how to train a FastText model from the NoReC (The Norwegian Review Corpus) dataset.
 
@@ -30,7 +30,7 @@ This will create the fastText training files:
 ## Train FastText Model
 Make sure you have fastText installed. 
 
-See instructions here: https://github.com/facebookresearch/fastText#building-fasttext
+See installation instructions here: https://github.com/facebookresearch/fastText#building-fasttext
 
 ```bash
 # Train Model
