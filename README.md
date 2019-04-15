@@ -69,3 +69,8 @@ Enter some text and it will return a predicted rating between 1 and 6.
 # Predictions
 fastText/fasttext predict model_norec.bin -
 ```
+
+## See Also
+* [NoReC](https://github.com/ltgoslo/norec)
+* [NoReC Baseline Models](https://github.com/ltgoslo/norec-baselines)
+* [Norwegian NLP Resources](https://github.com/web64/norwegian-nlp-resources)
