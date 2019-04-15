@@ -1,8 +1,10 @@
-# NoREC - FastText
+# NoREC - FastText Model
 
-FastText model for the NoReC (The Norwegian Review Corpus) dataset.
+This page will show how to train a FastText model from the NoReC (The Norwegian Review Corpus) dataset.
 
 The dataset contains annotated reviews in Norwegian ranging from 1 to 6 stars.
+
+The trained model will predict a rating of 1 to 6 starts of any given text.
 
 ## Steb-by-step instructions
 Download and extract the NoREC dataset
@@ -13,31 +15,34 @@ tar -xvzf  norec/conllu.tar.gz
 ```
 
 Convert .conllu files to fastText format
-```bash
+```
 php convert.php test
 php convert.php dev
 php convert.php train
 ```
 
-This will create the files:
+This will create the fastText training files:
 * norec_test.txt
 * norec_dev.txt
 * norec_train.txt
 
 
 ## Train FastText Model
-Make sure you have fastText installed. (See instructions here: 
-https://github.com/facebookresearch/fastText#building-fasttext )
+Make sure you have fastText installed. 
 
-This will create a model named `model_norec.bin`
+See instructions here: https://github.com/facebookresearch/fastText#building-fasttext
+
 ```bash
+# Train Model
 fasttext supervised -input norec_train.txt  -output model_norec -epoch 25 -wordNgrams 2 -lr 1.0
 ```
+This will create a model named `model_norec.bin`
 
 See FastText documentation on how to train and optimize models: https://fasttext.cc/docs/en/supervised-tutorial.html
 
 
 ```bash
+# Test model
 fasttext test model_norec.bin norec_test.txt
 ```
 Precision (P@1) is around 0.561
@@ -55,5 +60,6 @@ Run this command to try the interactive predictor.
 
 Enter some text and it will return a predicted rating between 1 and 6.
 ```bash
+# Predictions
 fastText/fasttext predict model_norec.bin -
 ```
