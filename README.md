@@ -1,13 +1,13 @@
 # NoREC - FastText Model
 
-This page will show how to train a FastText model from the NoReC (The Norwegian Review Corpus) dataset.
+This page shows step-by-step instructions on how to train a FastText model from the NoReC (The Norwegian Review Corpus) dataset.
 
 The dataset contains annotated reviews in Norwegian ranging from 1 to 6 stars.
 
 The trained model will predict a rating of 1 to 6 starts of any given text.
 
-## Steb-by-step instructions
-Download and extract the NoREC dataset
+## Prepare training data
+Download and extract the NoReC dataset
 ```bash
 wget http://folk.uio.no/eivinabe/norec-1.0.1.tar.gz
 tar -xvzf norec-1.0.1.tar.gz
